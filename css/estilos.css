@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+.contenedor{
+    width:90%;
+    max-width:1000px;
+    padding: 40px 20;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+.tarjeta{
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    color: white;
+    transition: .3s ease all;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor:pointer;
+    z-index:2;
+}   
+/*************************************Ver desde minuto 22*/
