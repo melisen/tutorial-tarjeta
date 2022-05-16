@@ -9,11 +9,12 @@ const numeroTarjeta = document.querySelector("#tarjeta .numero");
 const nombreTarjeta = document.querySelector("#tarjeta .nombre");
 const logoMarca = document.querySelector("#logo-marca");
 const firma = document.querySelector("#tarjeta .firma p");
+const mesExpiracion = document.querySelector("#mesExpiracion");
+const yearExpiracion = document.querySelector("#yearExpiracion");
+const ccv = document.querySelector("#ccv");
+const inputCCV = document.querySelector("#inputCCV");
 
-/*Rotar la tarjeta*/
-tarjeta.addEventListener("click", () => {
-    tarjeta.classList.toggle("active");
-})
+
 
 //Rellenar select mes
 for(let i = 1; i<13; i++){
@@ -100,5 +101,38 @@ if(valorInput ==""){
     nombreTarjeta.textContent= "Nombre Titular";
     firma.textContent= "Nombre Titular";
 }
+
+mostrarFrente();
+
+});
+
+// Select mes
+formulario.selectMes.addEventListener("change", (e) =>{
+    mesExpiracion.textContent= e.target.value;
+    mostrarFrente();
 })
+
+//Select year
+formulario.selectYear.addEventListener("change", (e) =>{
+    yearExpiracion.textContent= e.target.value.slice(2);
+    mostrarFrente();
+});
+
+//Código de seguridad CCV: dar vuelta tarjeta:
+inputCCV.addEventListener("keyup", () =>{
+    if(!tarjeta.classList.contains("active")){
+        tarjeta.classList.toggle("active");
+    }
+
+    //Validación del código de seguridad: sin espacio, caracteres máximos, etc
+    inputCCV.value= inputCCV.value
+    .replace(/\s/g, "") 
+    //Elimina espacios en blanco
+    .replace(/\D/g, "");
+    //Elimina todas las letras
+    
+    //Rellenar el CCV en la tarjeta:
+    ccv.textContent= inputCCV.value;                                      
+
+});
 

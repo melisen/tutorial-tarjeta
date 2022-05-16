@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos-tarjeta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Square+Peg&display=swap" rel="stylesheet">
@@ -28,9 +28,9 @@
                             <p class="label">Nombre tarjeta</p>
                             <p class="nombre"><!-- Rellenado con JS--></p>
                         </div>
-                        <div class="grupo" id="expiracion">
+                        <div class="grupo" >
                             <p class="label">Expiracion</p>
-                            <p class="expiracion"> <span class="mes">MM</span> / <span class="year">AA</span> </p>
+                            <p class="expiracion" > <span class="mes" id="mesExpiracion">MM</span> / <span class="year" id="yearExpiracion">AA</span> </p>
                         </div>
                     </div>
                 </div>
@@ -42,12 +42,12 @@
                         <p class="label">Firma</p>
                         <div class="firma"><p></p></div>
                     </div>
-                    <div class="grupo" id="ccv">
+                    <div class="grupo" >
                         <p class="label">CCV</p>
-                        <p class="ccv"></p>
+                        <p class="ccv" id="ccv"></p>
                     </div>
                 </div>
-                <p class="leyenda">Letenda</p>
+                <p class="leyenda">Leyenda</p>
                 <a href="#" class="link-banco">www.tu-banco-com</a>
             </div>
         </section>
@@ -83,7 +83,7 @@
             </div>
             <div class="grupo ccv">
                 <label for="inputCCV">CCV</label>
-                <input type="number" id="inputCCV" maxlength="3">
+                <input type="text" id="inputCCV" maxlength="3">
             </div>
         </div>
     <button type="subimit" class="btnEnviar">Enviar</button>
@@ -92,6 +92,6 @@
 
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/tarjeta.js"></script>
 </body>
 </html>
